@@ -16,8 +16,8 @@ const ShopAll = () => {
   ];
 
   // 3. FILTER LOGIC
-  const filteredProducts = activeFilter === 'All' 
-    ? archive 
+  const filteredProducts = activeFilter === 'All'
+    ? archive
     : archive.filter(item => item.cat === activeFilter);
 
   // Bundle Helper
@@ -31,7 +31,7 @@ const ShopAll = () => {
 
   return (
     <div className="bg-[#F4F4F4] min-h-screen text-black">
-      
+
       {/* ARCHIVE CONTROLS */}
       <div className="px-8 lg:px-16 pt-12 pb-6 flex flex-col md:flex-row justify-between items-end border-b border-black/10 sticky top-0 bg-[#F4F4F4]/80 backdrop-blur-md z-40">
         <div>
@@ -41,12 +41,12 @@ const ShopAll = () => {
             <span>Season: 2026_V1</span>
           </div>
         </div>
-        
+
         {/* Filter Bar Logic */}
         <div className="flex gap-8 mt-6 md:mt-0 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
           {['All', 'Outerwear', 'Apparel', 'Footwear'].map((filter) => (
-            <button 
-              key={filter} 
+            <button
+              key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`text-[10px] font-black uppercase tracking-widest transition-colors whitespace-nowrap ${activeFilter === filter ? 'text-blue-600' : 'text-black/40 hover:text-black'}`}
             >
@@ -63,19 +63,19 @@ const ShopAll = () => {
             <div key={item.id} className={`group flex flex-col ${item.feat ? 'lg:col-span-2' : 'lg:col-span-1'}`}>
               <div className="relative aspect-[4/5] bg-white overflow-hidden border border-black/5">
                 <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
-                
+
                 <div className="absolute top-4 left-4">
                   <span className="text-[8px] font-mono bg-black text-white px-2 py-1 tracking-tighter uppercase font-bold">{item.id}</span>
                 </div>
 
                 {/* UPDATED BUTTON: ADD TO CART */}
                 <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
-                   <button 
-                     onClick={() => addToCart(item)}
-                     className="w-full py-4 bg-black text-white text-[10px] font-black uppercase tracking-[0.3em] translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                   >
-                      Add to Loadout +
-                   </button>
+                  <button
+                    onClick={() => addToCart(item)}
+                    className="w-full py-4 bg-black text-white text-[10px] font-black uppercase tracking-[0.3em] translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    Add to Loadout +
+                  </button>
                 </div>
               </div>
 
@@ -99,10 +99,10 @@ const ShopAll = () => {
           <span className="text-4xl font-black italic text-blue-600">$750 <span className="text-sm text-gray-400 line-through ml-2">$830</span></span>
         </div>
         <div className="flex -space-x-20">
-           <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=400" className="w-56 md:w-64 h-80 object-cover border-4 border-white shadow-2xl rotate-[-5deg]" />
-           <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400" className="w-56 md:w-64 h-80 object-cover border-4 border-white shadow-2xl rotate-[5deg]" />
+          <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=400" className="w-56 md:w-64 h-80 object-cover border-4 border-white shadow-2xl rotate-[-5deg]" />
+          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400" className="w-56 md:w-64 h-80 object-cover border-4 border-white shadow-2xl rotate-[5deg]" />
         </div>
-        <button 
+        <button
           onClick={handleBundleDeploy}
           className="bg-black text-white px-12 py-5 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-blue-600 transition-all"
         >
@@ -111,11 +111,11 @@ const ShopAll = () => {
       </div>
 
       {/* FLOATING QUICK FILTER BAR */}
-      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 hidden md:block">
         <div className="bg-black/90 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full flex gap-8 items-center shadow-2xl">
           {['Outerwear', 'Apparel', 'Footwear'].map(cat => (
-            <button 
-              key={cat} 
+            <button
+              key={cat}
               onClick={() => setActiveFilter(cat)}
               className={`text-white text-[9px] font-black tracking-widest hover:text-blue-500 transition-colors uppercase ${activeFilter === cat ? 'text-blue-500' : ''}`}
             >
@@ -123,7 +123,7 @@ const ShopAll = () => {
             </button>
           ))}
           <div className="w-[1px] h-4 bg-white/20"></div>
-          <button 
+          <button
             onClick={() => setActiveFilter('All')}
             className="text-blue-500 text-[9px] font-black tracking-widest uppercase"
           >
