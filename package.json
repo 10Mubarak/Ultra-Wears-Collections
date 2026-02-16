@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://10mubarak.github.io/ULTRA-WEARS",
+  "homepage": "https://10mubarak.github.io/Ultra-Wears",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
