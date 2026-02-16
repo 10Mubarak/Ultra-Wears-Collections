@@ -1,0 +1,5 @@
+- [x] Import Link from react-router-dom in src/layouts/UltraLayout.jsx
+- [x] Update navPages array to use correct routes (/shop, /apparel, /footwear, keep # for others)
+- [x] Replace <a href={page.link}> with <Link to={page.link}> in desktop navigation
+- [x] Replace <a href={page.link}> with <Link to={page.link}> in mobile navigation
+- [x] Verify changes and test navigation
