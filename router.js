@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import UltraLayout from "./src/layouts/UltraLayout";
 import Home from "./src/Pages/Home";
 import Shop from "./src/Pages/Shop";
@@ -11,7 +11,7 @@ import ArchivePage from "./src/Pages/Archive";
 import ManifestoPage from "./src/Pages/Manifesto";
 import ProductDetailPage from "./src/Pages/ProductDetailPage";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         path: "/",
         Component: UltraLayout,
