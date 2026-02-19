@@ -99,6 +99,7 @@ const ShopAll = () => {
           <span className="text-4xl font-black italic text-blue-600">$750 <span className="text-sm text-gray-400 line-through ml-2">$830</span></span>
         </div>
         <div className="flex -space-x-20">
+          
           <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=400" className="w-56 md:w-64 h-80 object-cover border-4 border-white shadow-2xl rotate-[-5deg]" />
           <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=400" className="w-56 md:w-64 h-80 object-cover border-4 border-white shadow-2xl rotate-[5deg]" />
         </div>

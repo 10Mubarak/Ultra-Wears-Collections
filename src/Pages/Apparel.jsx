@@ -98,37 +98,37 @@ const ApparelPage = () => {
         <section className="flex-1 p-8 lg:p-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
             {products.map((item) => (
-  <div key={item.id} className="group">
-    {/* Wrap the image in a Link to the detail page */}
-    <Link to={`/product-detail/${item.id}`}>
-      <div className="aspect-[3/4] bg-[#F3F3F3] overflow-hidden relative rounded-sm cursor-pointer">
-        <img 
-          src={item.img} 
-          alt={item.name}
-          className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
-        />
-        <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <span className="bg-white text-[8px] font-mono font-bold px-2 py-1 tracking-widest uppercase">View Details</span>
-        </div>
-      </div>
-    </Link>
+              <div key={item.id} className="group">
+                {/* Wrap the image in a Link to the detail page */}
+                <Link to={`/product/${item.id}`}>
+                  <div className="aspect-[3/4] bg-[#F3F3F3] overflow-hidden relative rounded-sm cursor-pointer">
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="bg-white text-[8px] font-mono font-bold px-2 py-1 tracking-widest uppercase">View Details</span>
+                    </div>
+                  </div>
+                </Link>
 
-    <div className="mt-6 flex justify-between items-start">
-      <Link to={`/product-detail/${item.id}`} className="hover:underline">
-        <h3 className="text-[11px] font-black uppercase tracking-wider leading-tight">{item.name}</h3>
-      </Link>
-      <span className="text-sm font-bold tracking-tighter">{item.price}</span>
-    </div>
+                <div className="mt-6 flex justify-between items-start">
+                  <Link to={`/product/${item.id}`} className="hover:underline">
+                    <h3 className="text-[11px] font-black uppercase tracking-wider leading-tight">{item.name}</h3>
+                  </Link>
+                  <span className="text-sm font-bold tracking-tighter">{item.price}</span>
+                </div>
 
-    {/* Keep your Quick Add button outside the Link so it doesn't trigger navigation */}
-    <button 
-      onClick={() => handleAddToCart(item)}
-      className="mt-4 w-full bg-black text-white py-2 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-blue-600 transition-colors"
-    >
-      Quick Add +
-    </button>
-  </div>
-))}
+                {/* Keep your Quick Add button outside the Link so it doesn't trigger navigation */}
+                <button
+                  onClick={() => handleAddToCart(item)}
+                  className="mt-4 w-full bg-black text-white py-2 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-blue-600 transition-colors"
+                >
+                  Quick Add +
+                </button>
+              </div>
+            ))}
           </div>
         </section>
       </div>
@@ -167,74 +167,74 @@ const ApparelPage = () => {
 
 
       <section className="bg-[#0a0a0a] text-white py-32 px-6 lg:px-12 selection:bg-white selection:text-black">
-  <div className="max-w-[1800px] mx-auto">
-    
-    {/* EDITORIAL HEADER - Dark Mode */}
-    <div className="flex flex-col md:flex-row justify-between items-baseline mb-24 border-b border-white/10 pb-8">
-      <h2 className="text-5xl md:text-7xl font-light uppercase tracking-tighter">
-        Archive <span className="font-serif italic text-zinc-600">01</span>
-      </h2>
-      <div className="text-xs uppercase tracking-[0.2em] text-zinc-500 mt-6 md:mt-0 flex gap-6">
-        <span>Ready To Wear</span>
-        {/* CHANGED: products.length -> apparel.length */}
-        <span>{apparel.length} Units</span>
-      </div>
-    </div>
+        <div className="max-w-[1800px] mx-auto">
 
-    {/* BREATHABLE LUXURY GRID - Dark Mode */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-24">
-      {/* CHANGED: products.map -> apparel.map */}
-      {apparel.map((item) => (
-        <div key={item.id} className="group cursor-pointer flex flex-col">
-          
-          {/* Image Container */}
-          <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 mb-6">
-            <img 
-              src={item.img} 
-              alt={item.name} 
-              className="w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-105 filter grayscale group-hover:grayscale-0"
-            />
-            
-            {/* Dark Fade-in Action */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-700 flex flex-col justify-end p-4 md:p-6 opacity-0 group-hover:opacity-100">
-              {/* Added Link for navigation */}
-              <Link 
-                to={`/product-detail/${item.id}`}
-                className="w-full bg-white text-black py-4 text-center text-xs font-semibold uppercase tracking-widest hover:bg-zinc-300 transition-all duration-300 mb-2"
-              >
-                View Details
-              </Link>
-              {/* Added Quick Add button to match your functional needs */}
-              <button 
-                onClick={() => handleAddToCart(item)}
-                className="w-full bg-transparent border border-white text-white py-4 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
-              >
-                Quick Add +
-              </button>
+          {/* EDITORIAL HEADER - Dark Mode */}
+          <div className="flex flex-col md:flex-row justify-between items-baseline mb-24 border-b border-white/10 pb-8">
+            <h2 className="text-5xl md:text-7xl font-light uppercase tracking-tighter">
+              Archive <span className="font-serif italic text-zinc-600">01</span>
+            </h2>
+            <div className="text-xs uppercase tracking-[0.2em] text-zinc-500 mt-6 md:mt-0 flex gap-6">
+              <span>Ready To Wear</span>
+              {/* CHANGED: products.length -> apparel.length */}
+              <span>{apparel.length} Units</span>
             </div>
           </div>
-          
-          {/* Typography */}
-          <div className="flex flex-col">
-            <div className="flex justify-between items-start gap-4">
-              <h3 className="text-sm font-medium uppercase tracking-wide text-white leading-snug">
-                {item.name}
-              </h3>
-              <span className="text-sm font-light text-zinc-300 whitespace-nowrap">
-                {item.price}
-              </span>
-            </div>
-            <div className="text-xs text-zinc-500 uppercase tracking-widest mt-2">
-              {item.color}
-            </div>
+
+          {/* BREATHABLE LUXURY GRID - Dark Mode */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-24">
+            {/* CHANGED: products.map -> apparel.map */}
+            {apparel.map((item) => (
+              <div key={item.id} className="group cursor-pointer flex flex-col">
+
+                {/* Image Container */}
+                <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 mb-6">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                  />
+
+                  {/* Dark Fade-in Action */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-700 flex flex-col justify-end p-4 md:p-6 opacity-0 group-hover:opacity-100">
+                    {/* Added Link for navigation */}
+                    <Link
+                      to={`/product/${item.id}`}
+                      className="w-full bg-white text-black py-4 text-center text-xs font-semibold uppercase tracking-widest hover:bg-zinc-300 transition-all duration-300 mb-2"
+                    >
+                      View Details
+                    </Link>
+                    {/* Added Quick Add button to match your functional needs */}
+                    <button
+                      onClick={() => handleAddToCart(item)}
+                      className="w-full bg-transparent border border-white text-white py-4 text-xs font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+                    >
+                      Quick Add +
+                    </button>
+                  </div>
+                </div>
+
+                {/* Typography */}
+                <div className="flex flex-col">
+                  <div className="flex justify-between items-start gap-4">
+                    <h3 className="text-sm font-medium uppercase tracking-wide text-white leading-snug">
+                      {item.name}
+                    </h3>
+                    <span className="text-sm font-light text-zinc-300 whitespace-nowrap">
+                      {item.price}
+                    </span>
+                  </div>
+                  <div className="text-xs text-zinc-500 uppercase tracking-widest mt-2">
+                    {item.color}
+                  </div>
+                </div>
+
+              </div>
+            ))}
           </div>
 
         </div>
-      ))}
-    </div>
-
-  </div>
-</section>
+      </section>
 
       {/* --- HORIZONTAL SCROLL: ESSENTIAL SILHOUETTES --- */}
       <section className="py-24 bg-white overflow-hidden">
@@ -244,7 +244,7 @@ const ApparelPage = () => {
             <h2 className="text-5xl font-black italic uppercase tracking-tighter">Essential Silhouettes</h2>
           </div>
         </div>
-        
+
         <div className="flex gap-10 overflow-x-auto px-8 lg:px-16 no-scrollbar pb-10 snap-x">
           {collection.map((item) => (
             <div key={item.id} className="min-w-[320px] md:min-w-[420px] snap-center group">
@@ -257,13 +257,13 @@ const ApparelPage = () => {
                 </div>
                 {/* HORIZONTAL GALLERY QUICK ADD */}
                 <div className="absolute bottom-0 left-0 w-full p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-black/80 backdrop-blur-sm">
-                   <p className="text-white text-[9px] font-mono uppercase tracking-[0.2em] mb-4">Spec // {item.desc}</p>
-                   <button 
+                  <p className="text-white text-[9px] font-mono uppercase tracking-[0.2em] mb-4">Spec // {item.desc}</p>
+                  <button
                     onClick={() => handleAddToCart(item)}
                     className="w-full py-3 bg-white text-black text-[10px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-colors"
-                   >
-                     Quick_Add +
-                   </button>
+                  >
+                    Quick_Add +
+                  </button>
                 </div>
               </div>
               <div className="mt-6 flex justify-between items-start">
@@ -280,7 +280,7 @@ const ApparelPage = () => {
           <div className="absolute left-0 top-0 h-full w-1/3 bg-black"></div>
         </div>
       </section>
-      
+
     </div>
   );
 };
