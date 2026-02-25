@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Ultra-Wears-Vault/', // Change this line
+  base: '/Ultra-Wears-Collections/', // Change this line
 })
